@@ -11,9 +11,6 @@ let following_num = 0;
 let current_display = "";
 
 
-
-
-
 // operators.forEach(ops => ops.addEventListener("mousedown", function() {
 //     ops.style.backgroundColor = 'red';
 // }));
@@ -25,9 +22,9 @@ let current_display = "";
 
 my_btns.forEach(myBtn => myBtn.addEventListener("click", function () {
  
-    current_display += myBtn.textContent;
-    display.value = current_display;
-
+        current_display += myBtn.textContent;
+        display.value = current_display;
+  
 
 }));
 
@@ -35,18 +32,23 @@ my_btns.forEach(myBtn => myBtn.addEventListener("click", function () {
 
 operators.forEach(ops => ops.addEventListener('click', function() {
    
-    if (display.value != '0') {
+    if (first_num === 0) {
         first_num = display.value; 
         console.log('first number stored',first_num);
+    } else {
+        following_num = display.value; 
+        console.log('Following number is: ',following_num);
     }
     
     if(ops.textContent === "+") {
         selected_op = "+";
+        
     };
 
     // console.log(first_num);
     console.log(`Selected Operator is: ${selected_op}`);
     display.value = "0";
+    current_display = "";
     
    
     
